@@ -5,10 +5,8 @@
              x:Class="XEGallery.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Label Text="Welcome to XEGallery! (Xamarin.Essentials Gallery)" 
+           HorizontalOptions="Center" />
     </StackLayout>
 
 </ContentPage>

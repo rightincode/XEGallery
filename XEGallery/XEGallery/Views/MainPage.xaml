@@ -7,6 +7,12 @@
     <StackLayout>
         <Label Text="Welcome to XEGallery! (Xamarin.Essentials Gallery)" 
            HorizontalOptions="Center" />
-    </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="AppInfo" Text="App Info" Command="{Binding AppInfoCommand}"></Button>
+            <Button x:Name="BatteryInfo" Text="Battery Info"></Button>
+        </StackLayout>
+        
+    </StackLayout>    
 
 </ContentPage>

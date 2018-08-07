@@ -1,6 +1,6 @@
 ﻿namespace XEGallery.Core.Interfaces
 {
-    interface IXEAppInfo
+    public interface IXEAppInfo
     {
         string GetApplicationName();
         

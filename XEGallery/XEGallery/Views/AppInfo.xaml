@@ -8,10 +8,22 @@
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
             <StackLayout>
-                <Label x:Name="AppNameLabel" HorizontalOptions="StartAndExpand" />
-                <Label x:Name="BuildLabel" HorizontalOptions="StartAndExpand" />
-                <Label x:Name="PackageNameLabel" HorizontalOptions="StartAndExpand" />
-                <Label x:Name="VersionLabel" HorizontalOptions="StartAndExpand" />
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="AppNameLabel" Text="Application Name: " />
+                    <Label x:Name="AppName" Text="{Binding ApplicationName}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="BuildLabel" Text="Build: " />
+                    <Label x:Name="Build" Text="{Binding Build}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="PackageNameLabel" Text="Package Name: " />
+                    <Label x:Name="PackageName" Text="{Binding PackageName}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="VersionLabel" Text="Version: " />
+                    <Label x:Name="Version" Text="{Binding Version}" />
+                </StackLayout>
             </StackLayout>            
         </StackLayout>
     </ContentPage.Content>

@@ -10,7 +10,7 @@
 
         <StackLayout Orientation="Horizontal">
             <Button x:Name="AppInfo" Text="App Info" Command="{Binding AppInfoCommand}"></Button>
-            <Button x:Name="BatteryInfo" Text="Battery Info"></Button>
+            <Button x:Name="BatteryInfo" Text="Battery Info" Command="{Binding BatteryInfoCommand}"></Button>
         </StackLayout>
         
     </StackLayout>    

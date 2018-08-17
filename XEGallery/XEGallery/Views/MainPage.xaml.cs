@@ -16,10 +16,16 @@ namespace XEGallery
         }
 
         public ICommand AppInfoCommand => new Command(async () => await LoadAppInfoView());
+        public ICommand BatteryInfoCommand => new Command(async () => await LoadBatteryInfoView());
 
         private async Task LoadAppInfoView()
         {
             await Navigation.PushAsync(new AppInfo());
+        }
+
+        private async Task LoadBatteryInfoView()
+        {
+            await Navigation.PushAsync(new BatteryInfo());
         }
     }
 }

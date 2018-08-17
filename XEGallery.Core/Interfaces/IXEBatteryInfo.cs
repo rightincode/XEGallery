@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace XEGallery.Core.Interfaces
+﻿namespace XEGallery.Core.Interfaces
 {
-    interface IXEBatteryInfo
+    public interface IXEBatteryInfo
     {
         double BatteryChargeLevel { get; }
         double BatteryChargePercentage { get; }

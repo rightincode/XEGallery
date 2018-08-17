@@ -3,7 +3,7 @@ using Xamarin.Essentials;
 
 namespace XEGallery.Core.Models
 {
-    class XEBatteryInfo : IXEBatteryInfo
+    public class XEBatteryInfo : IXEBatteryInfo
     {
         public double BatteryChargeLevel { get; private set; }
         public double BatteryChargePercentage { get; private set; }

@@ -38,6 +38,7 @@ namespace XEGallery
         {
             var services = new ServiceCollection();
             services.AddTransient<IXEAppInfo, XEAppInfo>();
+            services.AddTransient<IXEBatteryInfo, XEBatteryInfo>();
             ServiceProvider = services.BuildServiceProvider();
         }
     }

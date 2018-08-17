@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XEGallery.Views.BatteryInfo">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to the Battery Info Screen!"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="BatteryChargeLevelLabel" Text="Battery Charge Level: " />
+                    <Label x:Name="BatteryChargeLevel" Text="{Binding BatteryChargeLevel}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="BatteryChargePercentageLabel" Text="Battery Charge Percentage: " />
+                    <Label x:Name="BatteryChargePercentage" Text="{Binding BatteryChargePercentage}" />
+                    <Label x:Name="BatteryChargePercentageSymble" Text="%" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="BatteryPowersourceLabel" Text="Battery Power Source: " />
+                    <Label x:Name="BatteryPowersource" Text="{Binding BatteryPowerSource}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="BatteryStateLabel" Text="Battery State: " />
+                    <Label x:Name="BatteryState" Text="{Binding BatteryState}" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -15,8 +15,14 @@ namespace XEGallery
             BindingContext = this;
         }
 
+        public ICommand AccelerometerCommand => new Command(async () => await LoadAccelerometerView());
         public ICommand AppInfoCommand => new Command(async () => await LoadAppInfoView());
         public ICommand BatteryInfoCommand => new Command(async () => await LoadBatteryInfoView());
+
+        private async Task LoadAccelerometerView()
+        {
+            await Navigation.PushAsync(new Accelerometer());
+        }
 
         private async Task LoadAppInfoView()
         {

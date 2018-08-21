@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XEGallery.Views.Accelerometer">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to the Accelerometer Screen!"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="XAccelerationLabel" Text="X Acceleration: " />
+                    <Label x:Name="XAcceleration" Text="{Binding AccelerationX}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="YAccelerationLabel" Text="Y Acceleration: " />
+                    <Label x:Name="YAcceleration" Text="{Binding AccelerationY}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="ZAccelerationLabel" Text="Z Acceleration: " />
+                    <Label x:Name="ZAcceleration" Text="{Binding AccelerationZ}" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

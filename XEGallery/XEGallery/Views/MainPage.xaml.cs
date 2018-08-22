@@ -18,6 +18,7 @@ namespace XEGallery
         public ICommand AccelerometerCommand => new Command(async () => await LoadAccelerometerView());
         public ICommand AppInfoCommand => new Command(async () => await LoadAppInfoView());
         public ICommand BatteryInfoCommand => new Command(async () => await LoadBatteryInfoView());
+        public ICommand CompassCommand => new Command(async () => await LoadCompassView());
 
         private async Task LoadAccelerometerView()
         {
@@ -32,6 +33,11 @@ namespace XEGallery
         private async Task LoadBatteryInfoView()
         {
             await Navigation.PushAsync(new BatteryInfo());
+        }
+
+        private async Task LoadCompassView()
+        {
+            await Navigation.PushAsync(new Compass());
         }
     }
 }

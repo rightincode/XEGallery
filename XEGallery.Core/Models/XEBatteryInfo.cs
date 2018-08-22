@@ -1,5 +1,6 @@
 ﻿using XEGallery.Core.Interfaces;
 using Xamarin.Essentials;
+using System;
 
 namespace XEGallery.Core.Models
 {
@@ -10,6 +11,8 @@ namespace XEGallery.Core.Models
         public string BatteryPowerSourceString { get; private set; }
         public string BatteryStateString { get; private set; }
 
+        public event EventHandler ReadingsChanged;
+
         public XEBatteryInfo()
         {
             Initialize();
@@ -19,6 +22,7 @@ namespace XEGallery.Core.Models
         private void XEBatteryInfo_BatteryChanged(object sender, BatteryChangedEventArgs e)
         {
             Initialize();
+            ReadingsChanged?.Invoke(this, e);
         }
 
         private void Initialize()

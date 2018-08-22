@@ -1,4 +1,6 @@
-﻿namespace XEGallery.Core.Interfaces
+﻿using System;
+
+namespace XEGallery.Core.Interfaces
 {
     public interface IXEBatteryInfo
     {
@@ -6,6 +8,8 @@
         double BatteryChargePercentage { get; }
         string BatteryPowerSourceString { get; }
         string BatteryStateString { get; }
+
+        event EventHandler ReadingsChanged;
 
     }
 }

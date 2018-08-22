@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel;
 using XEGallery.Core.Interfaces;
 
 namespace XEGallery.ViewModels
 {
-    public class BatteryInfoViewModel
+    public class BatteryInfoViewModel : ExtendedBindableObject, INotifyPropertyChanged
     {
         private readonly IXEBatteryInfo _batteryInfo;
 
@@ -20,6 +19,15 @@ namespace XEGallery.ViewModels
         public BatteryInfoViewModel(IXEBatteryInfo batteryInfo)
         {
             _batteryInfo = batteryInfo;
+            _batteryInfo.ReadingsChanged += OnBatteryReadingsChanged;
+        }
+
+        private void OnBatteryReadingsChanged(object sender, EventArgs e)
+        {
+            RaisePropertyChanged(() => BatteryChargeLevel);
+            RaisePropertyChanged(() => BatteryChargePercentage);
+            RaisePropertyChanged(() => BatteryPowerSource);
+            RaisePropertyChanged(() => BatteryState);
         }
     }
 }

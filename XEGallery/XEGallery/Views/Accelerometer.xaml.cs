@@ -24,7 +24,7 @@ namespace XEGallery.Views
 
         protected override void OnDisappearing()
         {
-            VM.StopAccelerometer();
+            VM.Dispose();
         }        
     }
 }

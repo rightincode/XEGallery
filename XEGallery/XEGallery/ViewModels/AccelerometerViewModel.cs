@@ -4,7 +4,7 @@ using XEGallery.Core.Interfaces;
 
 namespace XEGallery.ViewModels
 {
-    public class AccelerometerViewModel : ExtendedBindableObject, INotifyPropertyChanged
+    public class AccelerometerViewModel : ExtendedBindableObject, INotifyPropertyChanged, IDisposable
     {
         private readonly IXEAccelerometer _xeAccelerometer;
 
@@ -23,16 +23,17 @@ namespace XEGallery.ViewModels
             _xeAccelerometer.StartAccelerometer();
         }
 
-        public void StopAccelerometer()
-        {
-            _xeAccelerometer.StopAccelerometer();
-        }
-
         private void OnReadingsChanged(Object sender, EventArgs e)
         {
             RaisePropertyChanged(() => AccelerationX);
             RaisePropertyChanged(() => AccelerationY);
             RaisePropertyChanged(() => AccelerationZ);
+        }
+
+        public void Dispose()
+        {
+            _xeAccelerometer.StopAccelerometer();
+            _xeAccelerometer.ReadingsChanged -= OnReadingsChanged;
         }
     }
 }

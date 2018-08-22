@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Essentials;
 using XEGallery.Core.Interfaces;
 using XEGallery.Core.Enums;

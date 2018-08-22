@@ -3,7 +3,7 @@ using XEGallery.Core.Enums;
 
 namespace XEGallery.Core.Interfaces
 {
-    public interface IXEAccelerometer
+    public interface IXEAccelerometer : IDisposable
     {
         float XAccelleration { get; }
         float YAcceleration { get; }

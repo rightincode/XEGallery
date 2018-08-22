@@ -34,6 +34,7 @@ namespace XEGallery.ViewModels
         {
             _xeAccelerometer.StopAccelerometer();
             _xeAccelerometer.ReadingsChanged -= OnReadingsChanged;
+            _xeAccelerometer.Dispose();
         }
     }
 }

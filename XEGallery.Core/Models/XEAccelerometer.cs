@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace XEGallery.Core.Models
 {
-    public class XEAccelerometer : IXEAccelerometer
+    public class XEAccelerometer : IXEAccelerometer, IDisposable
     {
         public float XAccelleration { get; private set; }
 
@@ -113,6 +113,11 @@ namespace XEGallery.Core.Models
             ZAcceleration = e.Reading.Acceleration.Z;
 
             ReadingsChanged?.Invoke(this, e);
+        }
+
+        public void Dispose()
+        {
+            Accelerometer.ReadingChanged -= OnReadingChanged;
         }
     }
 }

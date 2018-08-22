@@ -22,5 +22,10 @@ namespace XEGallery.Views
             VM = new BatteryInfoViewModel(_xeBatteryInfo);
             BindingContext = VM;
         }
+
+        protected override void OnDisappearing()
+        {
+            VM.Dispose();
+        }
     }
 }

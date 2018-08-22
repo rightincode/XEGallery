@@ -4,7 +4,7 @@ using System;
 
 namespace XEGallery.Core.Models
 {
-    public class XEBatteryInfo : IXEBatteryInfo
+    public class XEBatteryInfo : IXEBatteryInfo, IDisposable
     {
         public double BatteryChargeLevel { get; private set; }
         public double BatteryChargePercentage { get; private set; }
@@ -101,6 +101,9 @@ namespace XEGallery.Core.Models
             }
         }
 
-        
+        public void Dispose()
+        {
+            Battery.BatteryChanged -= XEBatteryInfo_BatteryChanged;
+        }
     }
 }

@@ -4,7 +4,7 @@ using XEGallery.Core.Interfaces;
 
 namespace XEGallery.ViewModels
 {
-    public class BatteryInfoViewModel : ExtendedBindableObject, INotifyPropertyChanged
+    public class BatteryInfoViewModel : ExtendedBindableObject, INotifyPropertyChanged, IDisposable
     {
         private readonly IXEBatteryInfo _batteryInfo;
 
@@ -28,6 +28,12 @@ namespace XEGallery.ViewModels
             RaisePropertyChanged(() => BatteryChargePercentage);
             RaisePropertyChanged(() => BatteryPowerSource);
             RaisePropertyChanged(() => BatteryState);
+        }
+
+        public void Dispose()
+        {
+            _batteryInfo.ReadingsChanged -= OnBatteryReadingsChanged;
+            _batteryInfo.Dispose();
         }
     }
 }

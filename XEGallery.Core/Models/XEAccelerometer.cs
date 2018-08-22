@@ -2,6 +2,7 @@
 using Xamarin.Essentials;
 using XEGallery.Core.Interfaces;
 using XEGallery.Core.Enums;
+using System.Diagnostics;
 
 namespace XEGallery.Core.Models
 {
@@ -54,10 +55,12 @@ namespace XEGallery.Core.Models
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Feature not supported on device
+                Debug.WriteLine(fnsEx.ToString());
             }
             catch (Exception ex)
             {
                 // Other error has occurred.
+                Debug.WriteLine(ex.ToString());
             }
         }
 
@@ -73,10 +76,12 @@ namespace XEGallery.Core.Models
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Feature not supported on device
+                Debug.WriteLine(fnsEx.ToString());
             }
             catch (Exception ex)
             {
                 // Other error has occurred.
+                Debug.WriteLine(ex.ToString());
             }
         }
 
@@ -92,10 +97,12 @@ namespace XEGallery.Core.Models
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Feature not supported on device
+                Debug.WriteLine(fnsEx.ToString());
             }
             catch (Exception ex)
             {
                 // Other error has occurred.
+                Debug.WriteLine(ex.ToString());
             }
         }
 

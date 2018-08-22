@@ -3,7 +3,7 @@ using XEGallery.Core.Enums;
 
 namespace XEGallery.Core.Interfaces
 {
-    public interface IXESensor : IDisposable
+    public interface IXESensor
     {
         event EventHandler ReadingsChanged;
         void SetSensorSpeed(XESensorSpeed sensorSpeed);

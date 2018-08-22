@@ -20,7 +20,7 @@ namespace XEGallery.ViewModels
             _xeAccelerometer.ReadingsChanged += OnReadingsChanged;
 
             _xeAccelerometer.SetSensorSpeed(Core.Enums.XESensorSpeed.UI);
-            _xeAccelerometer.StartAccelerometer();
+            _xeAccelerometer.Start();
         }
 
         private void OnReadingsChanged(Object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace XEGallery.ViewModels
 
         public void Dispose()
         {
-            _xeAccelerometer.StopAccelerometer();
+            _xeAccelerometer.Stop();
             _xeAccelerometer.ReadingsChanged -= OnReadingsChanged;
             _xeAccelerometer.Dispose();
         }

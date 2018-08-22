@@ -43,14 +43,14 @@ namespace XEGallery.Core.Models
             }
         }
 
-        public void StartAccelerometer()
+        public void Start()
         {
             try
             {
                 if (!Accelerometer.IsMonitoring)
                 {
                     Accelerometer.Start(_xeSensorSpeed);
-                }                    
+                }
             }
             catch (FeatureNotSupportedException fnsEx)
             {
@@ -64,14 +64,14 @@ namespace XEGallery.Core.Models
             }
         }
 
-        public void StopAccelerometer()
+        public void Stop()
         {
             try
             {
                 if (Accelerometer.IsMonitoring)
                 {
                     Accelerometer.Stop();
-                }                    
+                }
             }
             catch (FeatureNotSupportedException fnsEx)
             {
@@ -85,7 +85,7 @@ namespace XEGallery.Core.Models
             }
         }
 
-        public void ToggleAccelerometer()
+        public void Toggle()
         {
             try
             {
@@ -104,7 +104,7 @@ namespace XEGallery.Core.Models
                 // Other error has occurred.
                 Debug.WriteLine(ex.ToString());
             }
-        }
+        }       
 
         private void OnReadingChanged(object sender, AccelerometerChangedEventArgs e)
         {
@@ -118,6 +118,6 @@ namespace XEGallery.Core.Models
         public void Dispose()
         {
             Accelerometer.ReadingChanged -= OnReadingChanged;
-        }
+        }       
     }
 }

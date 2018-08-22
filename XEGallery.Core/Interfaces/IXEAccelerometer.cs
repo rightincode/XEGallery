@@ -3,18 +3,10 @@ using XEGallery.Core.Enums;
 
 namespace XEGallery.Core.Interfaces
 {
-    public interface IXEAccelerometer : IDisposable
+    public interface IXEAccelerometer : IXESensor, IDisposable
     {
         float XAccelleration { get; }
         float YAcceleration { get; }
         float ZAcceleration { get; }
-
-        event EventHandler ReadingsChanged;
-
-        void SetSensorSpeed(XESensorSpeed sensorSpeed);
-        void StartAccelerometer();
-        void StopAccelerometer();
-        void ToggleAccelerometer();
-
     }
 }

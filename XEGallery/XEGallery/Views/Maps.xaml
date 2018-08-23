@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XEGallery.Views.Maps">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to the Maps Screen!"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="LatitudeLabel" Text="Latitude: " />
+                <Entry x:Name="Latitude" Placeholder="Enter Latitude" Text="{Binding Latitude}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="LongitudeLabel" Text="Longitude: " />
+                <Entry x:Name="Longitude" Placeholder="Enter Longitude" Text="{Binding Longitude}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="GoToMaps" Text="GoToMaps" Command="{Binding MapsCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

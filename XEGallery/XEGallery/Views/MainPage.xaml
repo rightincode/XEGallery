@@ -16,6 +16,7 @@
         <StackLayout Orientation="Horizontal">
             <Button x:Name="Compass" Text="Compass" Command="{Binding CompassCommand}"></Button>
             <Button x:Name="Connectivity" Text="Connectivity" Command="{Binding ConnectivityCommand}"></Button>
+            <Button x:Name="Maps" Text="Maps" Command="{Binding MapsCommand}"></Button>
         </StackLayout>
         
     </StackLayout>    

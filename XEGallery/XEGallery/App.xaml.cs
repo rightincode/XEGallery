@@ -42,6 +42,7 @@ namespace XEGallery
             services.AddTransient<IXEAccelerometer, XEAccelerometer>();
             services.AddTransient<IXECompass, XECompass>();
             services.AddTransient<IXEConnectivity, XEConnectivity>();
+            services.AddTransient<IXEMaps, XEMaps>();
             ServiceProvider = services.BuildServiceProvider();
         }
     }

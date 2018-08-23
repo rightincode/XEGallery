@@ -20,6 +20,7 @@ namespace XEGallery
         public ICommand BatteryInfoCommand => new Command(async () => await LoadBatteryInfoView());
         public ICommand CompassCommand => new Command(async () => await LoadCompassView());
         public ICommand ConnectivityCommand => new Command(async () => await LoadConnectivityView());
+        public ICommand MapsCommand => new Command(async () => await LoadMapsView());
 
         private async Task LoadAccelerometerView()
         {
@@ -44,6 +45,11 @@ namespace XEGallery
         private async Task LoadConnectivityView()
         {
             await Navigation.PushAsync(new Connectivity());
+        }
+
+        private async Task LoadMapsView()
+        {
+            await Navigation.PushAsync(new Maps());
         }
     }
 }

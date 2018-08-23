@@ -10,10 +10,12 @@ namespace XEGallery.ViewModels
     public class MapsViewModel : ExtendedBindableObject, INotifyPropertyChanged, IDisposable
     {
         private readonly IXEMaps _xeMaps;
+        private readonly IXEGeolocation _xeGeolocation;
 
         private double latitude;
         private double longitude;
-
+        private bool useCurrentLocation;
+        
         public double Latitude
         {
             get { return latitude; }
@@ -34,9 +36,32 @@ namespace XEGallery.ViewModels
             }
         }
 
-        public MapsViewModel(IXEMaps xEMaps)
+        public bool UseCurrentLocation
         {
-            _xeMaps = xEMaps;
+            get { return useCurrentLocation; }
+            set
+            {
+                useCurrentLocation = value;
+
+                if (useCurrentLocation)
+                {
+                    Task.Run(async () =>
+                    {
+                        await _xeGeolocation.SetLocationAsync();
+                        Latitude = _xeGeolocation.CurrentLocation.Latitude;
+                        Longitude = _xeGeolocation.CurrentLocation.Longitude;
+                    });
+                }
+
+                RaisePropertyChanged(() => UseCurrentLocation);
+            }
+        }
+
+        public MapsViewModel(IXEMaps xeMaps, IXEGeolocation xeGeolocation)
+        {
+            _xeMaps = xeMaps;
+            _xeGeolocation = xeGeolocation;
+            UseCurrentLocation = false;
         }
         public ICommand MapsCommand => new Command(async () => await LoadMapsApp());
         

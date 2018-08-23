@@ -17,7 +17,11 @@
                 <Entry x:Name="Longitude" Placeholder="Enter Longitude" Text="{Binding Longitude}" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="GoToMaps" Text="GoToMaps" Command="{Binding MapsCommand}" />
+                <Label x:Name="UseCurrentLocationLabel" Text="Use Current Location: " />
+                <Switch x:Name="UseCurrentLocation" IsToggled="{Binding UseCurrentLocation}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="ViewMaps" Text="View Maps" Command="{Binding MapsCommand}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

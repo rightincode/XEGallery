@@ -12,7 +12,6 @@ namespace XEGallery.Core.Models
 
         public XEMaps()
         {
-
         }
 
         public async Task OpenMapsAsync()

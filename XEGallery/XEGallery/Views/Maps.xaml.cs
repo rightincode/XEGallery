@@ -11,6 +11,7 @@ namespace XEGallery.Views
 	public partial class Maps : ContentPage
 	{
         private readonly IXEMaps _xeMaps = ((App)Xamarin.Forms.Application.Current).ServiceProvider.GetService<IXEMaps>();
+        private readonly IXEGeolocation _xeGeolocation = ((App)Xamarin.Forms.Application.Current).ServiceProvider.GetService<IXEGeolocation>();
 
         public MapsViewModel VM { get; }
 
@@ -19,7 +20,7 @@ namespace XEGallery.Views
             InitializeComponent();
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
-            VM = new MapsViewModel(_xeMaps);
+            VM = new MapsViewModel(_xeMaps, _xeGeolocation);
             BindingContext = VM;
 
             VM.Longitude = -122.130603;

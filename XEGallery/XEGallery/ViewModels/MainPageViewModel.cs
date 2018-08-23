@@ -1,7 +1,4 @@
-﻿using System.Windows.Input;
-using Xamarin.Forms;
-
-namespace XEGallery.ViewModels
+﻿namespace XEGallery.ViewModels
 {
     public class MainPageViewModel
     {
@@ -9,15 +6,5 @@ namespace XEGallery.ViewModels
         {
 
         }
-
-        public ICommand AppInfoCommand => new Command(() => LoadAppInfoView());
-               
-
-        private void LoadAppInfoView()
-        {
-
-        }
-
-
     }
 }
